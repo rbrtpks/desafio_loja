@@ -108,14 +108,8 @@ export class ProductComponent implements OnInit {
                 this.sales.push(this.product)
             }
 
-            this.inventories.find(element => {
-                if(element.code == this.product.code){
-                    console.log(element)
-                }
-            })
-
             localStorage.setItem("sales", JSON.stringify(this.sales))
-            this.showSuccess('Produto cadastrado com sucesso!')
+            this.showSuccess('Produto adicionado com sucesso!')
             this.getSale()
         } catch (err) {
             console.log("err")
@@ -207,6 +201,7 @@ export class ProductComponent implements OnInit {
 
     reset() {
         localStorage.removeItem('sales')
+        localStorage.removeItem('total_order')
         this.sales = []
         this.showSuccess('Você cancelou sua venda com sucesso!')
     }
