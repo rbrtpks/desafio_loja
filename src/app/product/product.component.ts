@@ -5,7 +5,6 @@ import { InventoryService } from './inventory.service'
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { ModalOpenInventory } from './inventory-modal';
 import { ModalFinishSale } from './finish-sale-modal';
-import { isInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 
 @Component({
     selector: 'app-product',
@@ -132,7 +131,10 @@ export class ProductComponent implements OnInit {
 
         this.inventories.forEach(element => {
             if(this.product.ammount <= 0){
-                return this.errorMessage = 'Quantidade não pode ser menor ou igual a zero e deve ser menor ou igual a quantidade em estoque.'
+                return this.errorMessage = 'Quantidade não pode ser menor ou igual a zero.'
+            }
+            if(this.product.ammount > element.ammount){
+                return this.errorMessage = 'Quantidade não pode maior que a quantidade em estoque.'
             }
             if(!isInteger(this.product.ammount)){
                 return this.errorMessage = 'A quantidade deve ser um número inteiro.'
