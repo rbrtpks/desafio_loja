@@ -1,0 +1,114 @@
+<section class="body">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card text-white bg-secondary mt-2">
+                    <div class="card-header">Venda de Produtos</div>
+                </div>
+            </div>
+
+            <div class="col-8 form-row mb-0">
+                <div class="input-group col-12">
+                    <label class="mb-1">LOCALIZE UM PRODUTO</label>
+                </div>
+                <div class="input-group col-12 mb-4">
+                    <input type="text" class="form-control" placeholder="Filtre pelo código ou nome do produto" [(ngModel)]="filterText" (keyup.enter)="filter($event)">
+                </div>
+            </div>
+            <div class="col-4 mt-4 mb-4">
+                <button type="button" class="btn btn-info btn-lg btn-block" (click)="listInventory()">Produtos em Estoque</button>
+            </div>
+            <div class="col-5 form-row">
+                <div class="form-group col-12">
+                    <label class="mb-0">Código</label>
+                    <input type="text" class="form-control form-control-sm mt-0" id="code-product" disabled [(ngModel)]="product.code">
+                </div>
+                <div class="form-group col-12">
+                    <label class="mb-0">Nome do Produto</label>
+                    <input type="text" class="form-control form-control-sm mt-0" id="name-product" disabled [(ngModel)]="product.name">
+                </div>
+                <div class="form-group col-12">
+                    <label class="mb-0">Quantidade</label>
+                    <input type="text" class="form-control form-control-sm" id="ammount-product" [(ngModel)]="product.ammount" (ngModelChange)="changeTotalOrder()">
+                </div>
+                <div class="form-group col-12">
+                    <label class="mb-0">Valor Unitário</label>
+                    <input type="text" class="form-control form-control-sm" id="unit-value-product" disabled [(ngModel)]="product.unit_value" (ngModelChange)="changeTotalOrder()" currencyMask
+                        [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+                </div>
+                <div class="form-group col-12">
+                    <div class="mb-0">
+                        <label class="mb-0" for="discount">Desconto</label>
+                        <div class="input-group input-group-sm mb-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="discount-product">R$</span>
+                            </div>
+                            <input type="text" class="form-control form-control-sm" id="discount" aria-describedby="discount-product" [(ngModel)]="product.discount"
+                                (ngModelChange)="changeTotalOrder()" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-12 mb-4">
+                    <label class="mb-0">Valor Total</label>
+                    <input type="text" class="form-control form-control-sm" id="total-value-product" [(ngModel)]="product.total_value" (ngModelChange)="changeTotalOrder()" currencyMask
+                        [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+                </div>
+                <div class="form-group col-5">
+                    <button type="button" class="btn btn-info btn-sm btn-block" (click)="save()">Adicionar Produto</button>
+                </div>
+            </div>
+            <div class="col-7">
+                <div class="table-overflow mb-3 mt-2">
+                    <table class="table table-bordered table-hover table-sm">
+                        <thead>
+                            <tr class="column table-dark">
+                                <th scope="col">Código</th>
+                                <th scope="col">Produto</th>
+                                <th scope="col">Qtd.</th>
+                                <th scope="col">Desc.</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of sales" class="table-light rows">
+                                <th>{{item.code}}</th>
+                                <th>{{item.name}}</th>
+                                <th>{{item.ammount}}</th>
+                                <th>R$ {{item.discount}}</th>
+                                <th>R$ {{item.total_value}}</th>
+                                <th>
+                                    <button class="save btn btn-info btn-sm" (click)="rowEditing(item.id, editingMode = true)">
+                                        <i class="bi bi-pencil-fill"></i>
+                                    </button>
+                                    <button class="remove btn btn-danger btn-sm" (click)="delete(item.id)">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-group col-12">
+                    <div class="mb-0">
+                        <div class="input-group input-group-sm mb-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text font-weight-bold" id="total-order">TOTAL PEDIDO</span>
+                            </div>
+                            <input type="text" disabled class="form-control form-control-sm" id="total-order" aria-describedby="total-order" [(ngModel)]="total_order" currencyMask
+                                [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 form-row">
+                    <div class="form-group col-6">
+                        <button type="button" class="btn btn-danger btn-sm btn-block" (click)="reset()">Cancelar Venda</button>
+                    </div>
+                    <div class="form-group col-6">
+                        <button type="button" class="btn btn-success btn-sm btn-block" (click)="finishSale()">Finalizar Venda</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

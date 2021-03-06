@@ -1,0 +1,34 @@
+.body {
+    height: calc(100vh - 200px);
+}
+
+.container {
+    margin-top: 20px;
+    border-radius: 1%;
+
+    background: #F0F0F5 no-repeat 70% top;
+    -webkit-font-smoothing: antialiased;
+}
+
+.table-overflow {
+    min-height: 340px;
+    max-height:341px;
+    overflow-y:auto;
+    border-radius: 1%;
+
+    font-size: 11px;
+}
+
+.column {
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid;
+    th {
+        background-color: rgb(121, 119, 119);
+    }
+}
+
+.rows {
+    font-family: 'Arial', Courier, monospace;
+    text-align: center;
+}

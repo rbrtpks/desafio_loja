@@ -1,0 +1,80 @@
+[
+    {
+        "code": 201,
+        "name": "Bolacha Mabel",
+        "ammount": 100,
+        "unit_value": 2.50
+    },
+    {
+        "code": 202,
+        "name": "Água sem gás",
+        "ammount": 100,
+        "unit_value": 2.00
+    },
+    {
+        "code": 203,
+        "name": "Água sem gás",
+        "ammount": 100,
+        "unit_value": 2.00
+    },
+    {
+        "code": 204,
+        "name": "Coca Lata",
+        "ammount": 100,
+        "unit_value": 3.50
+    },
+    {
+        "code": 205,
+        "name": "Chocolate",
+        "ammount": 100,
+        "unit_value": 4.50
+    },
+    {
+        "code": 206,
+        "name": "Salgado",
+        "ammount": 100,
+        "unit_value": 4.00
+    },
+    {
+        "code": 207,
+        "name": "Boné",
+        "ammount": 100,
+        "unit_value": 20.00
+    },
+    {
+        "code": 208,
+        "name": "Cerveja Lata",
+        "ammount": 100,
+        "unit_value": 3.50
+    },
+    {
+        "code": 209,
+        "name": "Cerveja Garrafa",
+        "ammount": 100,
+        "unit_value": 8.50
+    },
+    {
+        "code": 210,
+        "name": "Vodka",
+        "ammount": 100,
+        "unit_value": 30.50
+    },
+    {
+        "code": 211,
+        "name": "Chiclete",
+        "ammount": 100,
+        "unit_value": 1.50
+    },
+    {
+        "code": 212,
+        "name": "Balinha",
+        "ammount": 100,
+        "unit_value": 0.50
+    },
+    {
+        "code": 213,
+        "name": "Pastel",
+        "ammount": 100,
+        "unit_value": 5.00
+    }
+]

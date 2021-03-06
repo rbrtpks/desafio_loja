@@ -2,9 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 
+## Install dependencies
+Run `yarn`
+or
+Run `npm i`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+or
+Run `yarn start` and Navigate to `http://localhost:4200/`.
+or
+Run `npm start` and Navigate to `http://localhost:4200/`.
 
 ## Code scaffolding
 
